@@ -27,10 +27,6 @@ plugins:
   - jemoji
 
 
-### Posts ###
-permalink: /blog/:title
-
-
 ### Collections ###
 collections:
   projects:

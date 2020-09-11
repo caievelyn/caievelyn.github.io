@@ -23,6 +23,31 @@ author:
 ### Posts ###
 permalink: /blog/:title
 
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  elements:                                             # For Documentation Only
+    output: true                                        # For Documentation Only
+
+
+### Analytics ###
+analytics:
+  enabled: false                                        # Set true to enable analytics
+  google:
+    tracking_id: your-google-tracking-id
+
+
 ### Defaults for collections ###
 defaults:
   - scope:
@@ -40,18 +65,3 @@ defaults:
       type: "posts"
     values:
       comments: false                                   # Set to true to enable disqus comments
-      
-### Collections ###
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name
-  elements:                                             # For Documentation Only
-    output: true                                        # For Documentation Only
-
-### Exclude from processing ###
-exclude:
-  - README.md
-  - CONTRIBUTING.md
-  - LICENSE
-  - "*.log"

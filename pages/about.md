@@ -5,19 +5,6 @@ permalink: /about/
 weight: 3
 ---
 
-# **About Me**
+# **About This Blog**
 
-Hi I am **{{ site.author.name }}** :wave:,<br>
-This page serves as a very digestible overview of who I am and what past experience I have.
-I don't really like putting percentages on skills, I believe in being in a constate state of learning and staying humble to the unknown and undiscovered. If you like what you see here, feel free to check out my LinkedIn profile!
-
-# <a href="https://www.linkedin.com/in/hugil"><i class="fab fa-linkedin-in fa-1x"></i> LinkedIn</a>
-
-<div class="row">
-{% include about/skills.html title="Skills" source=site.data.skills %}
-{% include about/skills.html title="Programming" source=site.data.programming %}
-</div>
-
-<div class="row">
-{% include about/timeline.html %}
-</div>
+This blog is created as part of Gov1347: Election Analytics, a course at Harvard College led by Professor Ryan Enos. As we lead up to the November 2020 election, predicting the election is a matter of substantive importance to US citizens, foreign governments, and corporations worldwide. This blog seeks to explore and construct the best possible model to predict the 2020 presidential election.

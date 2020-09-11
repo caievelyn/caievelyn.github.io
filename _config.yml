@@ -2,7 +2,7 @@
 ### Site Settings ###
 title               : 2020 Presidential Election Analytics
 description         : >-
-                      Welcome to my election analysis blog! You may find my weekly posts in the 'Posts' tab on the top right. Feel free to reach out to me :email:: (evelyncai@college.harvard.edu) if you have any comments or questions.
+                      Welcome to my election analysis blog! You may find my weekly posts in the 'Posts' tab on the top right. Feel free to reach out to me :email: (evelyncai@college.harvard.edu) if you have any comments or questions.
 baseurl             : "/election-analytics"                     
 remote_theme        : YoussefRaafatNasry/portfolYOU
 
@@ -22,15 +22,6 @@ author:
 
 ### Posts ###
 permalink: /blog/:title
-
-
-### Collections ###
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name
-  elements:                                             # For Documentation Only
-    output: true                                        # For Documentation Only
 
 
 ### Defaults for collections ###

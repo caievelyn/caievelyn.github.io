@@ -1,12 +1,8 @@
 
-# description: Evelyn Cai, Harvard College '22
-
 ### Site Settings ###
 title               : 2020 Presidential Election Analytics
 description         : >-
-                      I turn coffee :coffee: into code,
-                      use tabs over spaces
-                      and never broke production.
+                      Welcome to my election analysis blog! You may find my weekly posts in the 'Posts' tab on the top right. Feel free to reach out to me :email:: (evelyncai@college.harvard.edu) if you have any comments or questions.
 baseurl             : "/election-analytics"                     
 remote_theme        : YoussefRaafatNasry/portfolYOU
 
@@ -18,7 +14,7 @@ plugins:
 
 ### Author Info + Logo ###
 author:
-  name              : Evelyn Cai
+  name              : Evelyn Cai, Harvard College '22
   image             : https://i.imgur.com/uyDNQnn.jpg
   email             : evelyncai@college.harvard.edu
   github            : caievelyn

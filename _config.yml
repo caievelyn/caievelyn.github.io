@@ -1,3 +1,56 @@
-remote_theme: YoussefRaafatNasry/portfolYOU
-title: 2020 Presidential Election Analytics
-description: Evelyn Cai, Harvard College '22
+
+# description: Evelyn Cai, Harvard College '22
+
+### Site Settings ###
+title               : 2020 Presidential Election Analytics
+description         : >-
+                      I turn coffee :coffee: into code,
+                      use tabs over spaces
+                      and never broke production.
+baseurl             : "/election-analytics"                     
+remote_theme        : YoussefRaafatNasry/portfolYOU
+
+
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Author Info + Logo ###
+author:
+  name              : Evelyn Cai
+  image             : https://i.imgur.com/uyDNQnn.jpg
+  email             : evelyncai@college.harvard.edu
+  github            : caievelyn
+  linkedin          : evelyncai
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  elements:                                             # For Documentation Only
+    output: true                                        # For Documentation Only
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:                                              # For Documentation Only
+      path: ""                                          # For Documentation Only
+      type: "elements"                                  # For Documentation Only
+    values:                                             # For Documentation Only
+      layout: "element"                                 # For Documentation Only
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false                                   # Set to true to enable disqus comments

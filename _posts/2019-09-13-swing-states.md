@@ -1,13 +1,10 @@
-
 ---
-title: Swing States: What's In a Swing?
+title: Swing States What's In a Swing?
 tags: [Swing, Historical Data, Popular Vote, Change Over Time]
 style: border
 color: primary
 description: An analysis and discussion of two definitions of swing states and their explanatory validity.
 ---
-
-Source: [freecodecamp](https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4)
 
 This tutorial will give you a basic understanding of React.js by building a very simple application. I’ll leave out everything which I don’t think is core.
 

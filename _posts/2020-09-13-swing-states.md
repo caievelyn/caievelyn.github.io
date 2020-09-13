@@ -12,7 +12,7 @@ This article seeks to explore two different methods of calculating the degree of
 
 Let's first begin with popular vote win margins for two parties. These win margins are calculated by taking the difference in two parties' vote share per election, and indicate how "close" the election was.
 
-![](pv_margins_general.png)
+![alt](pv_margins_general.png)
 
 
 

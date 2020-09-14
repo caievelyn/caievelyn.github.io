@@ -12,7 +12,7 @@ This article seeks to explore two different methods of calculating the degree of
 
 Let's first begin with popular vote win margins for two parties. These win margins are calculated by taking the difference in two parties' vote share per election, and indicate how "close" the election was.
 
-![](https://github.com/caievelyn/election-analytics/blob/master/data/PV_margins_general.png)
+![](PV_margins_general.png)
 
 First, we can take note of some high-level trends. In the years 1980 and 1984, most states are colored red, indicating that the popular vote favored the Republican party. In these years, President Ronald Reagan first defeated Democratic incumbent Jimmy Carter and then defeated Walter Mondale, who served as Carter's Vice President. Some states have consistently demonstrated comfortable win margins for a certain party, such as Oklahoma from 1980 onwards or California after the 1988 election. Meanwhile, the white- or faintly- colored states represent "swing" states in the manner that they are commonly understood: as states whose outcomes have the ability to affect electoral college votes, and thus the overall general election ([FiveThirtyEight](https://fivethirtyeight.com/features/arizona-is-probably-not-a-swing-state/)).
 
@@ -24,6 +24,6 @@ Not necessarily. Due to the winner-takes-all system, a candidate can have a very
 
 Another definition of "swing" can be calculated by the difference in partisan vote capture from election to election. As mentioned before, the states with consistently positive win margins for a certain party would not be considered "high" in swing under this definition. 
 
-![](https://github.com/caievelyn/election-analytics/blob/master/data/swing.png)
+![](swing.png)
 
 This map is consistent with historical records - in 2000, an election year that a Democratic President replaced a Republican incumbent, the map is generally blue. However, we must be careful about generalizing the opposite of this relationship. For example, in 1988, one might expect that a Democrat defeated a Republican incumbent because of the similarities to the 2000 map. In fact, a Republican - President George H. W. Bush - defeated the Democratic candidate. In this case, we must be careful about reading the plot as a *difference between Democratic vote share from the last election*, rather than the general win margin. Although Bush won the candidacy, he did so with a smaller win margin (~7.7) compared to the 1984 election, in which Reagan won by ~18.2 points.

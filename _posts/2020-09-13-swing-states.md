@@ -12,7 +12,7 @@ This article seeks to explore two different methods of calculating the degree of
 
 Let's first begin with popular vote win margins for two parties. These win margins are calculated by taking the difference in two parties' vote share per election, and indicate how "close" the election was.
 
-![](img/PV_margins_general.png)
+![](https://github.com/caievelyn/election-analytics/blob/master/_posts/img/PV_margins_general.png)
 
 First, we can take note of some high-level trends. In the years 1980 and 1984, most states are colored red, indicating that the popular vote favored the Republican party. In these years, President Ronald Reagan first defeated Democratic incumbent Jimmy Carter and then defeated Walter Mondale, who served as Carter's Vice President. Some states have consistently demonstrated comfortable win margins for a certain party, such as Oklahoma from 1980 onwards or California after the 1988 election. Meanwhile, the white- or faintly- colored states represent "swing" states in the manner that they are commonly understood: as states whose outcomes have the ability to affect electoral college votes, and thus the overall general election ([FiveThirtyEight](https://fivethirtyeight.com/features/arizona-is-probably-not-a-swing-state/)).
 

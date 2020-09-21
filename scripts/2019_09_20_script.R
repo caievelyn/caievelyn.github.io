@@ -1,5 +1,5 @@
 
-# 9/20/20 Blog Post on the Economy as a Predictor
+# 9/20/20 Blog Post on the Economy
 
 ## Load libraries
 library(tidyverse)

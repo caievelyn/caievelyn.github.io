@@ -1,7 +1,7 @@
 
 ### Site Settings ###
 title               : 2020 Presidential Election Analytics
-description         : Welcome to my election analysis blog! It is updated every Sunday - check out <a href="https://caievelyn.github.io/election-analytics/blog">my posts</a>.
+description         : Welcome to my election analysis blog! It is updated every Sunday - check out my posts by clicking Blog in the top right corner!
 baseurl             : "/election-analytics"                     
 remote_theme        : YoussefRaafatNasry/portfolYOU
 

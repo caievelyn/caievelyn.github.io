@@ -1,7 +1,7 @@
 
 ### Site Settings ###
 title               : 2020 Presidential Election Analytics
-description         : Welcome to my election analysis blog! It is updated every Sunday. Please reach out (evelyncai@college.harvard.edu) if you have any questions or comments!
+description         : Welcome to my election analysis blog! It is updated every Sunday - check out my posts [here](https://caievelyn.github.io/election-analytics/blog/).
 baseurl             : "/election-analytics"                     
 remote_theme        : YoussefRaafatNasry/portfolYOU
 

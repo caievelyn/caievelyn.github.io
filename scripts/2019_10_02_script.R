@@ -190,4 +190,58 @@ b <- grants_df %>%
 # Arrange graphics and save
 a + b
 ggsave("spending_core.png", width = 11, height = 4)
+incum <- popvote_df %>%
+    filter(party == "democrat")
+incumbency_lm <- lm(data = incum, formula = pv2p ~ incumbent)
+incumbency_2016 <- data.frame("year" = 2016, "incumbent" = FALSE)
+weights <- data.frame("p_and_ewt" = c(.45, .4, .35, .3, .25, .2, .15, .1),
+                      "iwt" = seq(.1, .8, .1))
+
+weights %>%
+    mutate(poll_pred = map_dbl(p_and_ewt, ~predict(polls_lm, polls_2016)*.),
+           econ_pred = map_dbl(p_and_ewt, ~predict(econ_lm, econ_2016)*.),
+           incumbency_pred = map_dbl(iwt, ~predict(incumbency_lm, incumbency_2016)*.))%>%
+    group_by(iwt) %>%
+    mutate(pred = poll_pred + econ_pred) %>%
+    mutate(real = 51.16249,
+           diff = pred - real,
+           mse = diff^2)
+
+# Create multivariate regression
+x <- left_join(polls_30_days, econ, by = c("year", "winner", "party", "incumbent", "pv2p")) %>%
+    filter(party == "democrat")
+mv_lm <- lm(data = x, formula = pv2p ~ incumbent + st_rdi + avg_support)
+summary(mv_lm)$r.squared
+mean((mv_lm$model$pv2p - mv_lm$fitted.values)^2)
+# LOO CV
+train(pv2p ~ avg_support + st_rdi + incumbent, method = "lm", data = x, trControl = trainControl(method = "LOOCV"))
+# Predict
+predict2020 <- data.frame("year" = 2020, "avg_support" = 50.3, "st_rdi"= 0.0517986614, "incumbent" = FALSE)
+predict(mv_lm, predict2020)
+
+# Plot
+p <- ggplot(data = x, aes(x=incumbent, y=pv2p)) +
+    geom_boxplot() +
+    geom_point() +
+    theme_minimal() +
+    labs(title = "Incumbency and Democrat vote share 1988-2016") +
+    scale_x_discrete(breaks = c(FALSE, TRUE),
+                     labels = c("Challenger", "Incumbent")) +
+    xlab(NULL) +
+    ylab("Democrat 2-party vote share")
+p + geom_point(aes(x = FALSE, y = 56.13201, color = "red")) +
+    theme(legend.position = "none")
+
+ggsave("2020pred.png", width = 8, height = 5)
+
+
+
+
+
+
+
+
+
+
+
 

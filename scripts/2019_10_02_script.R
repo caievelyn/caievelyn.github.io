@@ -59,7 +59,6 @@ train(pv2p ~ avg_support, method = "lm", data = polls_30_days, trControl = train
 train(pv2p ~ st_rdi, method = "lm", data = econ, trControl = trainControl(method = "LOOCV"))
 
 
-
 # Weighted ensemble test
 weights <- data.frame("pwt" = seq(.05, 0.95, .05))
 
@@ -133,7 +132,6 @@ p + geom_text(data = wt_2016, aes(x = pwt, y = mse), label = "2016", size = 2) +
 ggsave("sensitive.png", width = 6, height = 3.5)
 
 
-
 # Create list of states and their abbreviations to join by
 x <- grants_df %>%
     select(state_abb) %>%
@@ -191,5 +189,5 @@ b <- grants_df %>%
 
 # Arrange graphics and save
 a + b
-ggsave("spending_core.png", width = 10, height = 4)
+ggsave("spending_core.png", width = 11, height = 4)
 

@@ -193,7 +193,8 @@ ads_2020 %>%
   xlab("Period") +
   scale_x_discrete(labels = c("Apr-Sep", "Sep-Oct")) +
   ylab("Quantity of ads aired") +
-  labs(title="Political Advertising in the 2020 Election")
+  labs(title="Political Advertising in the 2020 Election") +
+  theme_minimal()
 
 # Save plot
 ggsave("ads.png", height = 5.5, width = 5)

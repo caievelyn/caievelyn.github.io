@@ -12,7 +12,7 @@ description: What are the most salient factors to consider when predicting the 2
 
 In the past few elections, there has been a return to individualized voter mobilization efforts, known as the ground game. The mobilization effects of the ground game are proven and significant: In 2012, voter turnout increased 7-8% from the previous year in heavily targeted states ([Enos & Fowler, 2016](https://www.cambridge.org/core/journals/political-science-research-and-methods/article/aggregate-effects-of-largescale-campaigns-on-voter-turnout/20C500B0DE62227873FD24CB3555F779/share/3d73ff531df62646698518c2717d3e1d33bcd0ef)). In fact, social scientists have even looked at the localized effects of field offices and projected that Obama's field office efforts raked in 275,000 additional voters in 2012, at a cost of $49.50 per vote when dividing the number of votes by the cost of operating said field offices ([Darr, 2014](https://journals-sagepub-com.ezp-prod1.hul.harvard.edu/doi/full/10.1177/1532673X13500520)). However, in examining the 2016 election, the relationship between field office quantity and location and popular vote share is less clear:
 
-![2016 Presidential Campaign Field Offices](../figures/ground_game.png)
+![2016 Presidential Campaign Field Offices](../figures/ground_game.PNG)
 
 While Clinton had a clear advantage in sheer number, various states that her campaign concentrated on still went red: Florida, Ohio, Michigan, and Pennsylvania. We also a see clear preference for both candidates to open up more offices in swing states, as solidly partisan states such as California and Texas saw few field offices.
 

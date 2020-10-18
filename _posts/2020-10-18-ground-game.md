@@ -16,9 +16,11 @@ description: What are the most salient factors to consider when predicting the 2
 ## Demographics
 
 <iframe
-  src= "http://rpubs.com/pfrontiera/234119"
-  style = "width=90%; height=100%;"
-></iframe>
+  src="http://rpubs.com/pfrontiera/234119"
+  width="90%"
+  height="100%"
+  scrolling="no">
+</iframe>
 
 
 

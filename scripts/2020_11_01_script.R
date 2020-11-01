@@ -1,13 +1,5 @@
 # Final Prediction script
 
-# Model components - Time for Change model (polls-based + Q2 GDP + Incumbent + Q2RDI*incumbency)
-# Polls by state instead of presidential approval - plot both out Incumbency
-# interaction with Q2+Q3 averaged RDI growth; found that R^2 was stronger for
-# the average and that incumbents benefit from financial benefits but are also punished for "shocks", hence because of COVID-19 I will use the interaction between the economy and incumbency
-# Average change in Q2 and Q3 RDI growth
-
-# Test out adding demographic change
-
 # Load libraries
 library(tidyverse)
 library(patchwork)

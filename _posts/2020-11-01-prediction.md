@@ -154,10 +154,14 @@ That being said, point estimates are not as helpful as viewing the entire predic
 
 ![](../figures/pred_2020_2.png)
 
+## Acknowledging the Unknown
 
+There are many reasons that 2020 is unique; a dampened ground game, turnout uncertainty, and differential mobilization across different demographics will all play a role. My model is optimistic for Biden's win (especially my point estimates, which are extremely and almost improbably optimistic. But that's why we don't simply just look at point estimates). Various factors - such as the Trump admin's handling of coronavirus, foreign relations, "shocks" and major events such as the presidential and vice presidential debates, Trump's tax returns, and John Bolton's tell-all - only hurt Trump.
 
+I would like to acknowledge two circumstances that might *help* Trump's re-election chances: differences in demographic voting behavior, and differences in voter turnout across partisan lines due to the pandemic and state voting laws. Looking at differences in demographic effects, last week I played around with a hypothetical scenario that Black communitise affected disproportionately by the coronavirus would hurt Trump, because Black voters would punish Trump for this endogenized "exogenous" shock. On the flip side, it could very well be that certain demographics - such as less educated rural white voters or Latino men - will vote at unexpectedly high levels. This is an important consideration, but I choose not to model demographic changes in my model due to its sensitivity to small changes. Demographic voting blocs' behavior is further obscured by the second consideration, which is voter turnout.
 
+Regarding turnout, one possible scenario that helps Trump would be that the dramatic increase in mail-in ballots and absentee voting might disproportionately affect Democrat voters' ability to vote. This could be the case, and there are already [thorny instances regarding what ballots will get counted](https://www.bloomberg.com/news/articles/2020-10-29/understanding-the-split-supreme-court-decisions-on-mail-ballots). Certainly, a limitation of my model is its inability to speak to this issue. An assumption my model makes is that turnout effects may simply cancel each other out, as certain groups are galvanized to vote more whereas others experience structural barriers to vote. For example, youth are voting at unprecedentedly high rates and early voting exit polls show a Democratic lean; however, strict voting laws may suppress the Democratic vote, as Democrats are more likely to engage in voting by mail than Republicans ([Thomspon, 2020](https://www-pnas-org.ezp-prod1.hul.harvard.edu/content/117/25/14052)).
 
-
+This may not be the case. I will be back in the coming weeks with the benefit of hindsight to evaluate how my prediction did. See you on the other side of the election!
 
 *You can find the replication scripts for graphics included in this week's blog [here](https://github.com/caievelyn/election-analytics/blob/master/scripts/2020_11_01_script.R). You can find the necessary data [here](https://github.com/caievelyn/election-analytics/tree/master/data).*

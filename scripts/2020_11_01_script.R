@@ -116,7 +116,7 @@ econ %>%
   ec_theme +
   labs(title = "Relationship between the Economy and Vote Share")
 
-ggsave("gdp.png", width = 6, height = 2)
+ggsave("gdp.png", width = 8, height = 4)
 
 
 

@@ -8,6 +8,12 @@ description: My final prediction for the 2020 presidential election, disaggregat
 
 As November 3rd is less than two days away, in this blog post I create a final prediction for the 2020 U.S. presidential election based off of state winners.
 
+A sneak peek of what's ahead:
+* My model parameters include Q3 RDI growth, incumbency, party incumbency, and state-level polls scaled for 2-party estimates.
+* I express that voters are rational actors that use retrospective voting as a tool to gauge political competency.
+* I examine a big unknown for the 2020 election: the impact of COVID-19.
+* I make a prediction for 2020. No spoilers!
+
 [structure here]
 
 (1) model formula (or procedure for obtaining prediction), 
@@ -32,7 +38,7 @@ Unlike national approval ratings, however, poll estimates can further be disaggr
 
 ![](../figures/pollavgstate.png)
 
-**Model parameters**
+**Parameters**
 
 Fundamental indicators are a strong predictor of elections. Firstly, voters balance sociotropic and individual-level concerns on the state of society and what that means for their immediate communities. Economic data, at least in national aggregate, is consistent and widely accessible. Voters cast their ballots based off of retrospective assessments of presidential performance, and the economy is good proxy for this retrospection process because its effects are felt immediately in terms of inflation or increased levels of real disposable income, as well as covered extensively by the media and touted by political figures as resume-building credentials. Because of the human difficulty it takes to accurately recall economic performance over a 4-year span, voters overwhelmingly tend to measure the entire 4-year economic performance based off of the last two years, especially the last two quarters of election year ([Healy & Lenz, 2013](https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12053)).
 
@@ -48,7 +54,7 @@ As mentioned previously, poll estimates closely follow presidential approval rat
 
 Next, I examine the models' in- and out-of-sample predictive power and examine the coefficients on my model of choice.
 
-## Validation and Uncertainty
+**Validation**
 
 Seeing the success of Abromowitz's parsimonious model, I tested several variants of the time for change model and gathered their in-sample R-squared fit values and out-of-sample cross-validation R-squared values. First, I chose to use Q3 economic indicators rather than indicators averaged over Q2 and Q3 because every single model formula variant performed better when using Q3 data rather than averaged Q2 and Q3 economic indicators. This was a surprising finding, as I previously believed that taking the average could protect our model performance by mitigating unusually poor or good economic performance. The formulas I used can be found below. For `mod2`, for example, the adjusted R-squared was 0.800 when solely using the Q3 RDI growth indicator (5-fold cross-validation R-squared was .795), whereas the adjusted R-squared was .788 when using averaged Q2 and Q3 RDI growth (5-fold cross-validation R-squared was .786). When performing cross-validation, the mean squared errors' standard errors were similar. For these reasons, the following models will be tested using only Q3 indicators.
 
@@ -57,11 +63,42 @@ mod1 <- formula(D_pv2p ~ avg_poll + GDP_growth_qt + incumbent)
 mod2 <- formula(D_pv2p ~ avg_poll + RDI_growth + incumbent)
 mod3 <- formula(D_pv2p ~ poll_2party + RDI_growth + incumbent)
 mod4 <- formula(D_pv2p ~ poll_2party + RDI_growth + incumbent + RDI_growth:incumbent)
+mod5 <- formula(D_pv2p ~ poll_2party + RDI_growth + incumbent + RDI_growth:incumbent + incumbent_party)
 ```
 
 ![](../figures/full_gt.png)
 
-Indeed, when performing 5-fold cross-validation, `mod4` was the best performer with a mean squared error of 4.17 and R-squared of .833, compared to the worst performer `mod1` with 4.50 MSE and .796 R-squared. The MSE is useful because extreme values are punished more in out-of-sample model evaluations, which is especially pertinent for 2020 since it may indeed yield a more extreme prediction.
+Indeed, when performing 5-fold cross-validation, `mod5` was the best performer with a mean squared error of 4.14 and R-squared of .834, compared to the worst performer `mod1` with 4.50 MSE and .796 R-squared. The MSE is useful because extreme values are punished more in out-of-sample model evaluations, which is especially pertinent for 2020 since it may indeed yield a more extreme prediction.
+
+Now that I've tested my model for in-sample and out-of-sample fit, it is time to examine the coefficients.
+
+**Coefficients**
+
+<table style="text-align:center"><tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td>2-party Democratic vote share</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Poll estimate (scaled for 2 parties)</td><td>0.902<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.019)</td></tr>
+<tr><td style="text-align:left">Q3 RDI growth</td><td>-2.665</td></tr>
+<tr><td style="text-align:left"></td><td>(21.534)</td></tr>
+<tr><td style="text-align:left">Incumbency</td><td>1.807<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.612)</td></tr>
+<tr><td style="text-align:left">Party incumbency</td><td>-1.532<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.513)</td></tr>
+<tr><td style="text-align:left">Interaction: Q3 RDI growth and incumbency</td><td>-126.799<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(50.234)</td></tr>
+<tr><td style="text-align:left">Constant</td><td>4.654<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.974)</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>510</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.820</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>4.255 (df = 504)</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
+
+For every point increase in polls for the Democratic candidate, the predicted 2-party vote share increases by 0.9 point on average. As expected, incumbency also provides a boost; all else held equal, an incumbent has a 1.8 point advantage over their opponent on average. Again confirming my hypothesis, party incumbency is a disadvantage. However, the negative coefficient with a high standard error for Q3 RDI growth, and the large negative term for the interaction parameter is concerning. I add controls for state by creating dummy variables for each state, which still yields a similarly large standard error for the negative coefficient of RDI growth. However, I will avoid using this 54-parameter model due to overfitting concerns.
+
+After trying out other model variants and finding that the RDI growth term is generally negative with a large standard error, I will proceed with model 5. However, this choice will impact the predictive uncertainty, which we will examine later.
+
+## The Prediction
+
 
 
 

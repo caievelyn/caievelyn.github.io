@@ -397,6 +397,3 @@ ggsave("pred_2020_2.png", width = 8, height = 4)
 
 
 
-
-
-

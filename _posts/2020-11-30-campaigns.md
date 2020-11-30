@@ -23,7 +23,7 @@ Meanwhile, Biden's mentions of previous Democratic presidential candidates dropp
 
 What about the coronavirus pandemic - could this be an insurgent issue, or a clarifying one? I argue that, given the deep entanglement between the handling of the coronavirus and economic conditions, the pandemic is more of a clarifying issue. According to Vavreck's theory, one would expect that Biden would lead a clarifying campaign tying the coronavirus to Trump. Indeed, Biden made more references to "affordable care", "essential workers", "wearing masks", pre-existing conditions", and "middle [of a] pandemic" than before the negative economic consequences of the coronavirus were felt.
 
-![](../figures/freq_gt.png)
+![](../figures/Capture.PNG)
 
 In the above table, note the frequencies of certain phrases after the April 1st cutoff point. Trump mentions manufacturing jobs, new jobs, "million jobs", "millions" and "billions" of dollars, and the stock market more than Biden. This isn't to say that Biden doesn't mention the economy, however: he focuses on the middle class, small businesses, and social security. 
 

@@ -104,7 +104,8 @@ a <- biden_twt %>%
   xlab("Date") +
   ylab("Sentiment") +
   labs(subtitle = "Joe Biden's Tweets") +
-  geom_hline(yintercept = 0, color = "red")
+  geom_hline(yintercept = 0, color = "red") +
+  ylim(-6, 5)
 
 b <- trump_twt %>%
   filter(isRetweet == FALSE,
@@ -116,7 +117,8 @@ b <- trump_twt %>%
   xlab("Date") +
   ylab("Sentiment") +
   labs(subtitle = "Donald Trump's Tweets") +
-  geom_hline(yintercept = 0, color = "red")
+  geom_hline(yintercept = 0, color = "red") +
+  ylim(-6, 5)
 
 a+b
 

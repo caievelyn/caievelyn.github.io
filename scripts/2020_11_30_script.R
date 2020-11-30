@@ -8,6 +8,7 @@ library(lubridate)
 library(patchwork)
 library(gt)
 library(syuzhet)
+library(stringr)
 
 # Read in Data
 campaign_speeches <- read_csv("data/campaignspeech_2019-2020.csv") %>%
@@ -87,6 +88,11 @@ gt_output <- data.frame(speech_freqs) %>%
 
 gtsave(data = gt_output, filename = "freq_gt.png")
 
+# Find a better way to visualize?
+
+
+
+
 ## Sentiment Analysis
 
 a <- biden_twt %>%
@@ -116,7 +122,52 @@ a+b
 
 ggsave("tweets.png", height = 6, width = 10)
 
+# Define another string of economic key words
+econ_str1 <- c("economy", "econ", "dollars",
+               "manufacturing", "jobs", "middle class",
+               "money", "tax cut", "new deal",
+              "new jobs", "tax", "small business", "small businesses",
+              "stock", "market", "GDP", "business", "businesses",
+              "inflation", "employment", "unemployment", "work",
+              "income", "wealth", "salary", "salaries", "prices", "price",
+              "trade", "invest", "investment", "bank", "deflation", "asset")
 
+library(sjmisc)
 
+a <- biden_twt %>%
+  filter(timestamp > "2020-01-01" & timestamp < "2020-11-04") %>%
+  mutate(econ = map(tweet, ~str_detect(., pattern = econ_str1)),
+         econ = map(econ, ~case_when(. == FALSE ~ 0,
+                                     TRUE ~ 1)),
+         econtalk = map_dbl(econ, ~sum(.))) %>%
+  filter(econtalk != 0) %>%
+  mutate(sentiment = map_dbl(tweet, ~get_sentiment(., method = "syuzhet"))) %>%
+  ggplot(aes(x = timestamp, y = sentiment)) +
+  geom_point() +
+  theme_minimal() +
+  xlab("Date") +
+  ylab("Sentiment") +
+  labs(subtitle = "Joe Biden's Tweets") +
+  geom_hline(yintercept = 0, color = "red")+
+  ylim(-6, 8)
+
+b <- trump_twt %>%
+  filter(date > "2020-01-01" & date < "2020-11-04") %>%
+  mutate(econ = map(text, ~str_detect(., pattern = econ_str1)),
+         econ = map(econ, ~case_when(. == FALSE ~ 0,
+                                     TRUE ~ 1)),
+         econtalk = map_dbl(econ, ~sum(.))) %>%
+  filter(econtalk != 0) %>%
+  mutate(sentiment = map_dbl(text, ~get_sentiment(., method = "syuzhet"))) %>%
+  ggplot(aes(x = date, y = sentiment)) +
+  geom_point() +
+  theme_minimal() +
+  xlab("Date") +
+  ylab("Sentiment") +
+  labs(subtitle = "Trump's Tweets") +
+  geom_hline(yintercept = 0, color = "red") +
+  ylim(-6, 8)
+
+a + b
 
 

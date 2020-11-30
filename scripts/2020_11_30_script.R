@@ -98,7 +98,6 @@ a <- biden_twt %>%
   xlab("Date") +
   ylab("Sentiment") +
   labs(subtitle = "Joe Biden's Tweets") +
-  scale_y_continuous(breaks = seq(-5, 6, by = 1)) +
   geom_hline(yintercept = 0, color = "red")
 
 b <- trump_twt %>%

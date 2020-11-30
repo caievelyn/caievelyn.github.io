@@ -43,5 +43,11 @@ Meanwhile, Donald Trump denied any long-lasting impacts:
 
 His sentiment did not trend noticeably towards one direction, but it did stay more positive than Biden's tweets.
 
+How were the two politicians tweeting about the economy?
+
+![](../figures/tweets2.png)
+
+It seems like Trump is still tweeting quite a bit about the economy, and generally positively. Besides a few tweets with large negative sentiments in May, as the economy continued to tank, his tweets are distributed quite evenly among positive and negative sentiments. 
+
 
 *You can find the replication scripts for graphics included in this week's blog [here](https://github.com/caievelyn/election-analytics/blob/master/scripts/2020_11_30_script.R). You can find the necessary data [here](https://github.com/caievelyn/election-analytics/tree/master/data).*

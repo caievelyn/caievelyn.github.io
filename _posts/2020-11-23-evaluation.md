@@ -22,15 +22,8 @@ Also notably, *not a single state* saw an over-prediction for Trump's vote share
 
 In my prediction blog post, I displayed a map with "safe" red states, "safe" blue states, and tossup states. Tossup states were defined as those where the 95% confidence interval crossed the 50% vote share threshold to win. As a thought experiment, below I explore if all toss-up states went to Trump instead.
 
-left_join(popvote_2020_df, by = "state") %>%
-  filter(year == 2020) %>%
-  mutate(D_pv2p = 100 * D_pv2p,
-         diff = D_pv2p - pred.fit,
-         sq_diff = diff^2,
-         sqRMSE = sum(sq_diff) / 50,
-         RMSE = sqrt(sqRMSE)) %>%
-  mutate(acc = case_when(pred.fit > 50 & D_pv2p < 50 ~ "Wrong",
-                         TRUE ~ "Right")) %>% View()
+![](../figures/eval_hypothetical.png)
+
 There is still a systematic underprediction for Biden; specifically, I am missing North Carolina, Florida, and Ohio. It seems like my model generally did well at predicting the battleground states that were Arizona, Nevada, Georgia, Pennsylvania, Michigan, and Wisconsin in terms of outcome. However, the average RMSE overall was quite large at **8.16**. Since I split my predictios into core and swing states, the separate RMSE values are **7.06** and **4.10** respectively; the core state model performed relatively worse than the swing state model. Below, I explore some reasons why my model accuracy was off and test those hypotheses.
 
 

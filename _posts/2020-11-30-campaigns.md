@@ -25,11 +25,23 @@ What about the coronavirus pandemic - could this be an insurgent issue, or a cla
 
 ![](../figures/freq_gt.png)
 
+In the above table, note the frequencies of certain phrases after the April 1st cutoff point. Trump mentions manufacturing jobs, new jobs, "million jobs", "millions" and "billions" of dollars, and the stock market more than Biden. This isn't to say that Biden doesn't mention the economy, however: he focuses on the middle class, small businesses, and social security. 
 
+In conclusion, Biden followed expectations in running a clarifying campaign after the economic ramifications of the pandemic started to hit Americans in April. Meanwhile, Trump defied expectations by failing to run an insurgent campaign and continuing to bring up the economy despite its tanking during his presidency.
 
 ## Sentiment Analysis
 
+![](../figures/tweets.png)
 
+Over the month of March, as it became apparent that the coronavirus would impact Americans more than previously thought, Joe Biden's tweets trended more and more negative. Here is one of his tweets from the end of March:
+
+> "Much has been made of changes in President Trump's tone in recent days. But with our health care system at risk, a virus spreading, our economy on the brink — and so many lives at stake — it’s time to be less interested in his words and more focused on his actions — or inaction."
+
+Meanwhile, Donald Trump denied any long-lasting impacts:
+
+> "“With the Tax Cuts and new Trade Deals, we were set for a tremendous growth rate this year.... and then the Virus came along.” @larry_kudlow  @MariaBartiromo We were breaking all records, especially on employment. It will all come roaring back again, and fast!"
+
+His sentiment did not trend noticeably towards one direction, but it did stay more positive than Biden's tweets.
 
 
 *You can find the replication scripts for graphics included in this week's blog [here](https://github.com/caievelyn/election-analytics/blob/master/scripts/2020_11_30_script.R). You can find the necessary data [here](https://github.com/caievelyn/election-analytics/tree/master/data).*

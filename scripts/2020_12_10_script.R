@@ -86,7 +86,7 @@ full_gt <- formulas_df %>%
              trump_2pv_2016 = "2016 Trump vote share coefficient")
 
 ggplot(data = compare_df, aes(x = casespercapita, y = r_2pv)) +
-  geom_point(size = 0.3, color = "indianred3") +
+  geom_point(size = 1.2, color = "indianred3", alpha = 0.7) +
   geom_smooth(method = "glm") +
   theme_minimal() +
   xlab("Cases per 100,000") +
@@ -112,14 +112,14 @@ compare_df %>%
 
 
 ggplot(data = compare_df, aes(x = deathspercapita, y = r_2pv)) +
-  geom_point(size = 0.3, color = "indianred3") +
+  geom_point(size = 1.2, color = "indianred3", alpha = 0.7) +
   geom_smooth(method = "glm") +
   theme_minimal() +
   xlab("Deaths per 100,000") +
   ylab("Republican 2-party vote share") +
   labs(title = "COVID cases and vote share")
 
-ggsave("deathsscatter.png", height = 4, width = 5)
+ggsave("deathsscatter.png", height = 6, width = 7)
 
 compare_df %>%
   arrange(desc(deathspercapita)) %>%

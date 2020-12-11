@@ -44,7 +44,7 @@ We would expect the coefficient on raw case numbers to be negative, since more p
 
 Next, I examine death rates per capita using the following formula: `r_2pv ~ deathspercapita` (pictured below). The coefficient on deaths per capita is negative and statistically significant at **-0.034**, meaning that for every additional death per 100,000, Trump's vote share is expected to see a decrease of .034%. When including the variable for 2016 Trump vote share, the coefficient on deaths per capita is positive at **.0003**, however it is statistically insignificant, likely due to differences in county size. I suspect that this result is due to the large number of rural counties compared to the number urban counties, of which the former are red-leaning.
 
-~[](../figures/deathsscatter.png)
+![](../figures/deathsscatter.png)
 
 ## Conclusion
 

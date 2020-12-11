@@ -93,7 +93,7 @@ ggplot(data = compare_df, aes(x = casespercapita, y = r_2pv)) +
   ylab("Republican 2-party vote share") +
   labs(title = "COVID cases and vote share")
 
-ggsave("scattercovid.png", height = 4, width = 5)
+ggsave("scattercovid.png", height = 4, width = 7)
 
 
 # Save gt
@@ -119,7 +119,7 @@ ggplot(data = compare_df, aes(x = deathspercapita, y = r_2pv)) +
   ylab("Republican 2-party vote share") +
   labs(title = "COVID cases and vote share")
 
-ggsave("deathsscatter.png", height = 6, width = 7)
+ggsave("deathsscatter.png", height = 4, width = 7)
 
 compare_df %>%
   arrange(desc(deathspercapita)) %>%
